@@ -10,14 +10,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Travel',
-      theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      child: MaterialApp(
+        title: 'Travel',
+        theme: ThemeData(
+          // scaffoldBackgroundColor: Colors.white,
+          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
-          fontFamily: 'Bold',),
-      home: const HomeScreen(),
+          fontFamily: 'Bold',
+        ),
+        home: const HomeScreen(),
+      ),
     );
   }
 }

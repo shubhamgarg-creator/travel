@@ -13,76 +13,198 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  double initialChildSize = 0.47;
+  bool showContainer = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 15.0,
-            ),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 8),
-                      decoration: BoxDecoration(
-                          color: Colors.blue.shade900.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Row(
+          showContainer
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15.0,
+                  ),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.person_add_alt,
-                            size: 15,
-                            color: Colors.blue.shade900,
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 8),
+                            decoration: BoxDecoration(
+                                color: Colors.blue.shade900.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(15)),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.person_add_alt,
+                                  size: 15,
+                                  color: Colors.blue.shade900,
+                                ),
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "Invite",
+                                  style: TextStyle(
+                                      color: Colors.blue.shade900,
+                                      fontSize: 13),
+                                ),
+                              ],
+                            ),
                           ),
-                          Text(
-                            "Invite",
-                            style: TextStyle(
-                                color: Colors.blue.shade900, fontSize: 13),
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: const Color(0XFFf2f0eb),
+                                child: Image.network(
+                                  "https://cdn2.iconfinder.com/data/icons/bold-e-commerce/512/Ecommerce_Live_Support-512.png",
+                                  height: 25,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              const CircleAvatar(
+                                backgroundColor: Color(0XFFf2f0eb),
+                                backgroundImage: NetworkImage(
+                                  "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              CircleAvatar(
+                                backgroundColor: const Color(0XFFf2f0eb),
+                                child: Image.network(
+                                  "https://cdn.icon-icons.com/icons2/916/PNG/512/Menu_icon_icon-icons.com_71858.png",
+                                  height: 25,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ),
-                    const Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0XFFf2f0eb),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      ListTile(
+                        tileColor: const Color(0XFFf2f0eb),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        SizedBox(
-                          width: 8,
+                        dense: true,
+                        contentPadding:
+                            const EdgeInsets.only(left: 10, right: 10),
+                        leading: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.blue.shade900,
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                  "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+                            ),
+                          ),
                         ),
-                        CircleAvatar(
-                          backgroundColor: Color(0XFFf2f0eb),
+                        title: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Amazon Order",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              "2 mins ago",
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                  fontFamily: 'Semibold'),
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 8,
+                        subtitle: const Text(
+                          "Order submitted",
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 12,
+                              fontFamily: 'Semibold'),
                         ),
-                        CircleAvatar(
-                          backgroundColor: Color(0XFFf2f0eb),
-                        ),
-                      ],
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
+                      ),
+                      // ignore: prefer_const_constructors
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "5 Tasks",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontFamily: 'Bold',
+                                  letterSpacing: 0.5,
+                                  height: 0,
+                                ),
+                              ),
+                              Text(
+                                "Good Morning",
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  height: 0,
+                                  fontFamily: 'Semibold',
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade400,
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(
+                              Icons.search,
+                            ),
+                          ).animate().slideX(
+                                begin: 1,
+                              ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ).animate().slideY(begin: 1)
+              : const SizedBox(),
           Expanded(
             child: DraggableScrollableSheet(
-              initialChildSize: 0.42,
-              minChildSize: 0.3,
-              maxChildSize: 0.88,
-              snapAnimationDuration: const Duration(seconds: 2),
+              initialChildSize: initialChildSize,
+              minChildSize: showContainer ? 0.47 : 0.9,
+              maxChildSize: 0.9,
+              expand: showContainer ? false : true,
+              snapAnimationDuration: const Duration(milliseconds: 100),
               builder:
                   (BuildContext context, ScrollController scrollController) {
+                scrollController.addListener(() {
+                  if (scrollController.offset > 0.0001) {
+                    setState(() {
+                      showContainer = false;
+                      initialChildSize = 0.9;
+                    });
+                  }
+                });
                 return Container(
                   decoration: const BoxDecoration(
                     color: Color(0XFFf2f0eb),
@@ -91,63 +213,75 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       topRight: Radius.circular(40),
                     ),
                   ),
+                  padding: const EdgeInsets.only(top: 15),
                   child: SingleChildScrollView(
                     controller: scrollController,
+                    clipBehavior: Clip.hardEdge,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      padding: const EdgeInsets.only(
+                        left: 15.0,
+                        right: 15,
+                        bottom: 15,
+                      ),
                       child: Column(
                         children: [
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            height: 5,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                color: Colors.grey,
-                                borderRadius: BorderRadius.circular(20)),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "5 Tasks",
-                                    style: TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'Bold',
-                                      letterSpacing: 0.5,
-                                      height: 0,
+                          showContainer
+                              ? Container()
+                              : Column(
+                                  children: [
+                                    Container(
+                                      height: 5,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                          color: Colors.grey,
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
                                     ),
-                                  ).animate().slideX(),
-                                  const Text(
-                                    "Good Morning",
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      height: 0,
-                                      fontFamily: 'Semibold',
-                                      color: Colors.grey,
+                                    const SizedBox(
+                                      height: 10,
                                     ),
-                                  ).animate().slideX(),
-                                ],
-                              ),
-                              Container(
-                                padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade400,
-                                  shape: BoxShape.circle,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            const Text(
+                                              "5 Tasks",
+                                              style: TextStyle(
+                                                fontSize: 28,
+                                                fontFamily: 'Bold',
+                                                letterSpacing: 0.5,
+                                                height: 0,
+                                              ),
+                                            ).animate().scale(),
+                                            const Text(
+                                              "Good Morning",
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                height: 0,
+                                                fontFamily: 'Semibold',
+                                                color: Colors.grey,
+                                              ),
+                                            ).animate().scale(),
+                                          ],
+                                        ),
+                                        Container(
+                                          padding: const EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey.shade400,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: const Icon(
+                                            Icons.search,
+                                          ),
+                                        ).animate().slideX(begin: 1),
+                                      ],
+                                    ),
+                                  ],
                                 ),
-                                child: const Icon(
-                                  Icons.search,
-                                ),
-                              ).animate().slideX(begin: 1),
-                            ],
-                          ),
                           const SizedBox(
                             height: 20,
                           ),
