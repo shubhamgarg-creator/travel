@@ -75,7 +75,7 @@ class _TravelScreenState extends State<TravelScreen> {
                                     letterSpacing: 0.5,
                                     height: 0,
                                   ),
-                                ).animate().slideX(
+                                ).animate().fade(
                                     delay: const Duration(milliseconds: 50)),
                                 const Text(
                                   "5 new\nsuggestions",
@@ -86,7 +86,7 @@ class _TravelScreenState extends State<TravelScreen> {
                                     fontWeight: FontWeight.w400,
                                     color: Colors.black54,
                                   ),
-                                ).animate().slideX(
+                                ).animate().fade(
                                     delay: const Duration(milliseconds: 50)),
                               ],
                             ),

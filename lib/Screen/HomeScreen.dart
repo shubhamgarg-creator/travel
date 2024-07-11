@@ -488,7 +488,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                               height: 5,
                                                             ),
                                                             const Text(
-                                                              "Birthday Party Check",
+                                                              "5 new suggesions",
                                                               style: TextStyle(
                                                                 color: Colors
                                                                     .black54,
